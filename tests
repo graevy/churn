@@ -1,0 +1,4 @@
+# first example without any package searching
+# "sudo churn net-tools nmap 192.168.1.0/24"
+
+

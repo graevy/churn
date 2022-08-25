@@ -1,13 +1,8 @@
-set -x
+PACKAGE=`pkgfile -qb $1`
+pacman -Sq --noconfirm $PACKAGE 1>/dev/null
 
-PACKAGE=$1
-pacman -S $PACKAGE
-
-# TODO: arg -> package magic happens here
-
-shift
 "$@"
 
-# logging happens here
+# TODO: logging happens here
 
-pacman -R $PACKAGE
+pacman -R --noconfirm $PACKAGE 1>/dev/null

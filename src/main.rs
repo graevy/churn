@@ -36,5 +36,18 @@ fn main() {
 
     pkg_mgr.uninstall(&pkg_name);
     
-    print!("{}", pkg_name);
+    print!("{pkg_name}");
+}
+
+
+#[cfg(test)]
+mod tests {
+    use churn::Pkgmgr;
+    mod echo;
+
+    #[test]
+    fn spawn_pkgmgr() {
+        let pkg_mgr = echo::Echo::NAME;
+        assert_eq!(pkg_mgr, "echo")
+    }
 }

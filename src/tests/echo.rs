@@ -1,5 +1,7 @@
 use std::process::Command;
 
+// substitute echo for simple interactive unit testing?
+// code is copied, but all cmd flags are stripped (args methods -> arg methods)
 pub struct Echo;
 impl churn::Pkgmgr for Echo {
     const NAME: &'static str = "echo";
@@ -15,7 +17,7 @@ impl churn::Pkgmgr for Echo {
             .unwrap()
             .to_owned()
             )
-            .unwrap()
+        .unwrap()
     }
 
     fn install(&self, pkg_name: &String) -> std::process::Output {

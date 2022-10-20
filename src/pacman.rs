@@ -21,7 +21,7 @@ impl churn::Pkgmgr for Pacman {
             .unwrap()
             .to_owned()
             )
-            .unwrap()
+        .unwrap()
     }
 
     fn install(&self, pkg_name: &String) -> std::process::Output {

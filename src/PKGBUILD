@@ -1,0 +1,23 @@
+# Maintainer: Avery Lawrence <avry@pm.me>
+
+
+pkgname=churn
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="Wrap commands for uninstalled packages"
+arch=('x86_64' 'i686' 'arm' 'armv6h' 'arm7vh' 'aarch64')
+url="https://github.com/graevy/churn"
+license=('AGPL3')
+depends=('pkgfile')
+makedepends=('cargo')
+install=churn.install
+# source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
+
+build() {
+ cd "$pkgname-$pkgver"
+ cargo build
+}
+
+package() {
+ cd "$pkgname-$pkgver"
+}
